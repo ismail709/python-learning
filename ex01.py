@@ -15,7 +15,8 @@ def targetSum(nums, target):
     for p in numsPairs:
         if sum(p) == target:
             # we return the indices of the two numbers that validate the condition
-            return [nums.index(p[0]),nums.index(p[1])]
+            # nums.index(p[0])+1 : we add this line to prevent the function from returning the same index for duplicate numbers
+            return [nums.index(p[0]),nums.index(p[1],nums.index(p[0])+1)]
     else:
         # if none the pairs pass, we return an empty list
         return []
@@ -23,11 +24,11 @@ def targetSum(nums, target):
 
 
 # an example list
-myList = [1,2,4,5,9,7]
+myList = [3,3]
 # an example target
 # here 1 + 7 = 8
 # index of 1 is 0 and index of 7 is 5
-myTarget = 8
+myTarget = 6
 # expected result [0,5]
 result = targetSum(myList,myTarget)
 
