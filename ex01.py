@@ -7,7 +7,7 @@ def targetSum(nums, target):
     # we sort the copy
     numsCopy.sort()
     # we delete values greater than the target
-    numsCopy = [x for x in numsCopy if x < target]
+    numsCopy = [x for x in numsCopy if x <= target]
     # we create all possible pairs to test them
     # it may be more efficent to start testing the possible pairs before finding them all
     numsPairs = [[numsCopy[x],numsCopy[y]] for x in range(len(numsCopy)) for y in range(len(numsCopy)) if y > x]
@@ -24,11 +24,11 @@ def targetSum(nums, target):
 
 
 # an example list
-myList = [3,3]
+myList = [1,2,4,5,9,7]
 # an example target
 # here 1 + 7 = 8
 # index of 1 is 0 and index of 7 is 5
-myTarget = 6
+myTarget = 8
 # expected result [0,5]
 result = targetSum(myList,myTarget)
 
