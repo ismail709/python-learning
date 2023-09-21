@@ -25,6 +25,8 @@ def targetSum(nums, target):
 # an example list
 myList = [1,2,4,5,9,7]
 # an example target
+# here 1 + 7 = 8
+# index of 1 is 0 and index of 7 is 5
 myTarget = 8
 # expected result [0,5]
 result = targetSum(myList,myTarget)
